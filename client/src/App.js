@@ -5,6 +5,7 @@ import './App.css';
 import Post from './components/Post';
 import Write from './components/Write';
 import Header from './components/Header';
+import Acknowledgement from './components/Acknowledgement'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Switch>
           <Route exact path="/"><Post/></Route>
           <Route path="/write"><Write/></Route>
+          <Route path="/acknowledgement"><Acknowledgement/></Route>
         </Switch>
       </div>
     </Router>
