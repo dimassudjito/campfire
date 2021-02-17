@@ -8,3 +8,7 @@ CREATE TABLE stories(
 
 ALTER TABLE stories
 ADD COLUMN burn integer;
+
+ALTER TABLE stories
+ALTER COLUMN burn
+SET DEFAULT 0;

@@ -14,8 +14,8 @@ app.post("/stories", async (req, res) => {
     try {
         const {title, content, burn} = req.body;
         const newStory = await pool.query(
-            "INSERT INTO stories(title, content, burn) VALUES($1, $2, $3) RETURNING *",
-            [title, content, burn]
+            "INSERT INTO stories(title, content) VALUES($1, $2) RETURNING *",
+            [title, content]
         );
         res.json(newStory.rows[0])
     } catch (err) {
@@ -50,8 +50,8 @@ app.put("/stories/:id", async (req, res) => {
         const {id} = req.params;
         const {burn} = req.body;
         const updateStory = await pool.query(
-            "UPDATE stories SET burn = $1 WHERE id = $2",
-            [burn, id]
+            "UPDATE stories SET burn = burn+1 WHERE id = $1",
+            [id]
         );
         res.json("story was updated");
     } catch (err) {
