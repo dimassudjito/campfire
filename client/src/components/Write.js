@@ -8,7 +8,7 @@ const Write = () => {
         event.preventDefault();
         try {
             const body = {title, content}
-            const response = await fetch("http://localhost:5000/stories", {
+            const response = await fetch("https://campfire-story-api.herokuapp.com/stories", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(body)

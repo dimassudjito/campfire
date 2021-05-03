@@ -7,7 +7,7 @@ const Post = () => {
     /* fetch stories */
     const getStories = async () => {
         try {
-            const response = await fetch("http://localhost:5000/stories");
+            const response = await fetch("https://campfire-story-api.herokuapp.com/stories");
             const jsonResponse = await response.json();
             setStories(jsonResponse);
         } catch (err) {

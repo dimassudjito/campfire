@@ -8,7 +8,7 @@ const Burn = ({story}) => {
     const updateBurn  = async (event) => {
         event.preventDefault();
         try {
-            const response = await fetch(`http://localhost:5000/stories/${story.id}`, {
+            const response = await fetch(`https://campfire-story-api.herokuapp.com/stories/${story.id}`, {
                 method: "PUT",
                 headers: {"Content-Type": "application/json"},
             });
